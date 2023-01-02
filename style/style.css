@@ -8,7 +8,8 @@
 	--link-text-color: #3d703f;/*通常時aタグなど*/
 	--link-text-color-hover: #75c178;/*hover active時aタグなど*/
 	--primary-border-color:gray;
-	--nav-color:#292929;
+	--primary-nav-color:#292929;
+	--secondary-nav-color:#505050;
 	--nav-height:4em;
 	--slide-menu-width:20em;
 }
@@ -38,7 +39,7 @@ button.normal,input[type="button"].normal{
 	font-size:1em;
 	border-radius: 10px;
 	margin:0.5em;
-	border:0.1em solid gray;
+	border:0.05em solid gray;
 }
 /*circle*/
 button.circle,input[type="button"].circle{
@@ -50,7 +51,7 @@ button.circle,input[type="button"].circle{
 	width:4em;
 	height:4em;
 	text-align: center;
-	border:0.1em solid gray;
+	border:0.05em solid gray;
 }
 button:hover,input[type="button"]:hover{
 	background-color:var(--secondary-color);/*少し暗く*/
@@ -70,7 +71,7 @@ input[type="text"],input[type="date"]{
 	padding:1em;
 	margin:0.5em;
 	font-size:1em;
-	border:0.2em solid var(--primary-border-color);
+	border:0.05em solid var(--primary-border-color);
 	border-radius: 10px;
 	height:2em;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
@@ -163,13 +164,13 @@ a:active{
 	color:var(--link-text-color-hover);/*少し明るく*/
 }
 /*h1-h6*/
-h1 {
+main h1 {
 text-decoration:underline 0.1em;
 text-decoration-color:var(--primary-color);
 text-underline-offset:0.2em;
 }
 
-h2 {
+main h2 {
 border-left:0.3em solid var(--primary-color);
 padding-left:0.2em;
 
@@ -180,7 +181,7 @@ h1,h2,h3,h4,h5,h6{
 }
 /*nav*/
 .nav-contents{
-	background-color:var(--nav-color);
+	background-color:var(--primary-nav-color);
 	height:var(--nav-height);
 	color:var(--secondary-text-color);
 	position: fixed;
@@ -208,7 +209,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.slide-menu-contents>ul>li{
+.slide-menu-contents>ul>a>li{
 	list-style:none;
 	padding:1em;
 	border-bottom:0.1em solid gray;
@@ -218,18 +219,18 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
-.slide-menu-contents>ul>li>a{
+.slide-menu-contents>ul>a>li{
 	padding:1em;
 }
-.slide-menu-contents>ul>li:hover{
+.slide-menu-contents>ul>a>li:hover{
 	background-color:var(--primary-color);
 }
-.slide-menu-contents>ul>li:hover>a{
+.slide-menu-contents>ul>a:hover>li{
 	color:var(--secondary-text-color);
 }
 
 /*スライドメニューオープン時に周りを暗く*/
-.slide-menu-contents:after{
+.slide-menu-contents::after{
 	content:"";
 	display:block;
 	position:fixed;
@@ -246,4 +247,22 @@ main{
 	padding:0.5em;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 	border:0.1em solid gray;
+}
+/*footer*/
+footer{
+	color:var(--secondary-text-color);
+}
+footer>.footer-main{
+	background-color:var(--primary-nav-color);
+	padding:1.2em; 
+}
+.footer-sub{
+	background-color:var(--secondary-nav-color);
+	padding-right:1.2em; 
+	padding-left:1.2em; 
+	padding-top:0.4em; 
+	padding-bottom:0.4em; 
+	text-align:right;
+	font-size:0.9em;
+	color:#eeeeee
 }

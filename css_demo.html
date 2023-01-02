@@ -15,10 +15,10 @@
 			</div>
 			<div class="slide-menu-contents">
 				<ul>
-					<li><a href="#">menu</a></li>
-					<li><a href="#">menu</a></li>
-					<li><a href="#">menu</a></li>
-					<li><a href="#">menu</a></li>
+					<a href="#"><li>menu</li></a>
+					<a href="#"><li>menu</li></a>
+					<a href="#"><li>menu</li></a>
+					<a href="#"><li>menu</li></a>
 				</ul>
 			</div>
 		</nav>
@@ -69,15 +69,26 @@
 			</label>
 			<input type="button" class="normal" name="test" value="3" />
 		</main>
-		
+		<footer>
+			<div class="footer-main">
+				<h2>このサイトについて</h2>
+				<p>このページはcss表示確認用です。</p>
+			</div>
+			<div class="footer-sub">
+				<p>copyright 2022 Yuu</p>
+			</div>
+		</footer>
 		<script>
 		function show_hide_menu(){
 			const menu = document.querySelector(".slide-menu-contents");//.slide-menu-contentsを取得
-			console.log(menu.style.display);
+			const menu_button = document.querySelector("button");//.nav-menu-buttonを取得
+			const menu_icon = document.querySelector(".nav-menu-button>.material-icons");//.slide-menu-contentsを取得
 			if(menu.style.display==""||menu.style.display=="none"){
 				menu.style.display = 'block'
+				menu_icon.innerText='close'
 			}else{
 				menu.style.display = 'none'
+				menu_icon.innerText='menu'
 			}
 		}
 		
