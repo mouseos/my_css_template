@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--font awesome-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!--material icons-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>CSS表示確認用</title>
 		<link rel="stylesheet" href="style/style.css">
@@ -71,27 +74,20 @@
 		</main>
 		<footer>
 			<div class="footer-main">
-				<h2>このサイトについて</h2>
-				<p>このページはcss表示確認用です。</p>
+				<div class="footer-about">
+					<h2>このサイトについて</h2>
+					<p>このページはcss表示確認用です。</p>
+				</div>
+				<div class="footer-sns">
+					<a href="#"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#"><i class="fa-solid fa-envelope"></i></a>
+					<a href="#"><img src="img/icons/misskey.png"></a>
+				</div>
 			</div>
 			<div class="footer-sub">
-				<p>copyright 2022 Yuu</p>
+				<p>copyright 2023 Yuu</p>
 			</div>
 		</footer>
-		<script>
-		function show_hide_menu(){
-			const menu = document.querySelector(".slide-menu-contents");//.slide-menu-contentsを取得
-			const menu_button = document.querySelector("button");//.nav-menu-buttonを取得
-			const menu_icon = document.querySelector(".nav-menu-button>.material-icons");//.slide-menu-contentsを取得
-			if(menu.style.display==""||menu.style.display=="none"){
-				menu.style.display = 'block'
-				menu_icon.innerText='close'
-			}else{
-				menu.style.display = 'none'
-				menu_icon.innerText='menu'
-			}
-		}
-		
-		</script>
+		<script type="text/javascript" src="script/script.js"></script>
 	</body>
 </html>

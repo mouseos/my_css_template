@@ -14,6 +14,9 @@
 	--slide-menu-width:20em;
 }
 
+*{
+	max-width:100%;
+}
 
 @font-face {
 	font-family: 'line-seed';
@@ -64,6 +67,8 @@ button:active,input[type="button"]:active{
 .nav-menu-button{
 	height:100%;
 	box-shadow: none;
+	border-style:none;
+	font-size:2em;
 }
 /*input*/
 input[type="text"],input[type="date"]{
@@ -252,10 +257,24 @@ main{
 footer{
 	color:var(--secondary-text-color);
 }
+
+footer a{
+	color:var(--secondary-text-color);
+}
 footer>.footer-main{
 	background-color:var(--primary-nav-color);
 	padding:1.2em; 
 }
+
+@media (min-width: 700px) {
+  footer>.footer-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
 .footer-sub{
 	background-color:var(--secondary-nav-color);
 	padding-right:1.2em; 
@@ -265,4 +284,18 @@ footer>.footer-main{
 	text-align:right;
 	font-size:0.9em;
 	color:#eeeeee
+}
+
+.footer-sns a{
+	font-size:2em;
+}
+
+/*footer icons*/
+.fa-twitter{
+	color:#1DA1F2;
+}
+/*アイコンフォントにないSNSアイコンを使用するときのスタイル*/
+.footer-sns img{
+	height:1.8em;
+	vertical-align: bottom;
 }
