@@ -199,6 +199,11 @@ h1,h2,h3,h4,h5,h6{
 	z-index:10;
 	display:inline-flex;
 }
+
+nav{
+	/*ナビバーと下のコンテンツが重なるのを防ぐために、ナビバー分の高さ以上のマージンを付ける。*/
+	margin-bottom:calc(0.7em + var(--nav-height));
+}
 /*スライドメニュー*/
 .slide-menu-contents{
 	display:none;
@@ -248,7 +253,6 @@ h1,h2,h3,h4,h5,h6{
 /*main*/
 main{
 	margin:0.7em; 
-	margin-top:calc(0.7em + var(--nav-height));
 	padding:0.5em;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 	border:0.1em solid gray;
@@ -267,7 +271,7 @@ footer>.footer-main{
 }
 
 @media (min-width: 700px) {
-  footer>.footer-main {
+footer>.footer-main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -298,4 +302,41 @@ footer>.footer-main{
 .footer-sns img{
 	height:1.8em;
 	vertical-align: bottom;
+}
+
+/*スライダー*/
+.slider li{
+	list-style:none;
+	display:none;
+	animation-name: appear;
+    animation-duration: 2s;
+}
+
+.slider img{
+	width:100vw;
+	height:30vh;
+	object-fit:contain;
+}
+
+
+@keyframes appear {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+.slider-details{
+	background-color:var(--primary-nav-color);
+	color:var(--secondary-text-color);
+	padding:0.1em;
+}
+.slider li{
+	backdrop-filter: blur(12px);
+}
+
+.slider{
+	background-size:cover;
 }
