@@ -35,6 +35,7 @@ button,input[type="button"]{
 	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 	background-color:var(--primary-color);
 	color:var(--secondary-text-color);
+	transition: transform 0.1s ease; 
 }
 button.normal,input[type="button"].normal{
 	padding:1em 2em;
@@ -58,6 +59,7 @@ button.circle,input[type="button"].circle{
 }
 button:hover,input[type="button"]:hover{
 	background-color:var(--secondary-color);/*少し暗く*/
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 button:active,input[type="button"]:active{
 	background-color:var(--secondary-color);
@@ -123,37 +125,38 @@ input[type="checkbox"] {
 
 .check-text {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 .check-text:before {
   content: "";
-  display: inline-flex;
+  display: inline-block;
   width: 1em;
   height: 1em;
-  margin-right: 0.1em;
+  margin-right: 0.3em;
   border: 0.2em solid var(--primary-color);
-  padding: 0em;
-  transition: 0.1s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  background-color: transparent;
+  transition: background-color 0.1s ease;
 }
 
 input[type="checkbox"]:checked + .check-text:before {
   background-color: var(--primary-color);
 }
 
-
 input[type="checkbox"]:checked + .check-text:after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform:translate(-82%, -100%) rotate(-40deg);
-  width: 0.8em;
-  height: 0.3em;
-  border: 0.2em solid white;
-  border-top: 0;
-  border-right: 0;
+  top: 0.3em;
+  left: 0.4em;
+  width: 0.3em;
+  height: 0.6em;
+  border: solid white;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg); /* チェックマークの角度を45度に */
 }
+
 
 
 /*a*/
@@ -223,6 +226,7 @@ nav{
 	list-style:none;
 	padding:1em;
 	border-bottom:0.1em solid gray;
+	padding: 1.2em;
 }
 .slide-menu-contents>ul{
 	padding-inline-start: 0px;
